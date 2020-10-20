@@ -36,19 +36,19 @@ public class ConexionBase {
 	
 	public void cerrarConexion(){
 		try {
-			con.close();
+			this.con.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 	
 	public ResultSet query() throws SQLException{
-        ResultSet res = preparedStatement.executeQuery();
+        ResultSet res = this.preparedStatement.executeQuery();
         return res;
     }
 	
 	public int execute() throws SQLException {
-        int result = preparedStatement.executeUpdate();
+        int result = this.preparedStatement.executeUpdate();
         return result;
  
     }
