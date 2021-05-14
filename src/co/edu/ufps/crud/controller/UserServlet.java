@@ -40,6 +40,7 @@ public class UserServlet extends HttpServlet {
     	String motor = getServletContext().getInitParameter("motor");
         userDAO = UserDAOFactory.getUserDAO(patron, motor);
     }
+    
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

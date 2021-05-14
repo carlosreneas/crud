@@ -3,13 +3,36 @@ package co.edu.ufps.crud.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import co.edu.ufps.crud.model.User;
 
 public class UserDAOJpa implements UserDAO {
-
+	
+	
+	protected EntityManager getEntityManager() {
+		EntityManagerFactory emf = 
+				Persistence.createEntityManagerFactory("crud");
+		EntityManager em = emf.createEntityManager();
+		return em;
+	}
+	
 	@Override
 	public void insertUser(User user) throws SQLException {
-		// TODO Auto-generated method stub
+		
+		co.edu.ufps.crud.entities.User userEntity = new co.edu.ufps.crud.entities.User();
+		userEntity.setName(user.getName());
+		userEntity.setCountry(user.getCountry());
+		userEntity.setEmail(user.getEmail());
+		
+		EntityManager em = this.getEntityManager();
+		
+		em.getTransaction().begin();
+		em.persist(user);
+		em.getTransaction().commit();
+		
 
 	}
 

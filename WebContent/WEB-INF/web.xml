@@ -11,7 +11,7 @@
   </welcome-file-list>
   <context-param>
       <param-name>base</param-name>
-      <param-value>singleton</param-value>
+      <param-value>jpa</param-value>
   </context-param>
   <context-param>
       <param-name>motor</param-name>
