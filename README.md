@@ -1,6 +1,6 @@
 # crud
 
-private String jdbcURL = "jdbc:mysql://database-1.ct3gev1bipds.us-east-2.rds.amazonaws.com:3306/testpweb";
+private String jdbcURL = "jdbc:postgresql://database-1.ct3gev1bipds.us-east-2.rds.amazonaws.com:5432/testpweb";
 	
 private String jdbcUsername = "student";
     
